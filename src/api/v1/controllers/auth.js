@@ -25,7 +25,7 @@ const signUp = (service) => async (req, res) => {
             httpOnly: true,
             secure: false // since this is a practice project, we set this to false
         })
-        res.json(user)
+        res.status(201).json(user)
     } catch (err) {
         res.status(500).json({ error: err.message, status: 500, ok: false })
     }
