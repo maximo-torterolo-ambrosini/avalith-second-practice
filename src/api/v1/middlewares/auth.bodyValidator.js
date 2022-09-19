@@ -15,8 +15,8 @@ const validateBody = (req, res, next) => {
 const validateUsername = async (req, res, next) => {
     try {
         const { username } = req.body
-        const user = await userRepository.findOneByUsername(username)
-        if (user) {
+        const userExists = await userRepository.existsByUsername(username)
+        if (userExists) {
             return res.status(400).json({
                 error: 'username already exists',
                 status: 400,

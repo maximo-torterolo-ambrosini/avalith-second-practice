@@ -13,7 +13,7 @@ const comparePassword = (password, hash) => {
 }
 
 const login = async (username, password) => {
-    const user = await userRepository.findOneByUsername(username)
+    const user = await userRepository.findOneByUsernameIncludePassword(username)
     const isPasswordCorrect = comparePassword(password, user.password)
     if (!user || !isPasswordCorrect) {
         throw { message: 'username or password is incorrect' }
