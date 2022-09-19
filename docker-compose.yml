@@ -3,7 +3,7 @@ services:
   express:
     build: .
     ports:
-    - "${PORT}:80"
+    - "${PORT}:${PORT}"
     env_file: .env
   postgres:
     image: postgres:alpine

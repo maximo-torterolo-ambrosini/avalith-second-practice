@@ -1,24 +1,14 @@
-const { Sequelize } = require('sequelize')
-
-const { POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_HOST } = process.env
-
-const sequelize = new Sequelize(POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD, {
-    host: POSTGRES_HOST,
-    dialect: 'postgres'
-})
-
-const testConnection = () => {
-    sequelize
-        .authenticate()
-        .then(() => {
-            console.log('Connection has been established successfully.')
-        })
-        .catch((err) => {
-            console.error('Unable to connect to the database:', err)
-        })
+require('dotenv').config()
+const { POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB, POSTGRES_HOST } = process.env
+module.exports = {
+    development: {
+        username: POSTGRES_USER,
+        password: POSTGRES_PASSWORD,
+        database: POSTGRES_DB,
+        host: POSTGRES_HOST,
+        dialect: 'postgres',
+        define: {
+            underscored: true
+        }
+    }
 }
-sequelize.testConnection = testConnection
-
-Object.freeze(sequelize)
-
-module.exports = sequelize
