@@ -4,6 +4,7 @@
     "description": "avalith second practice",
     "main": "app.js",
     "scripts": {
+        "start": "node src/api/v1/db/config.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -15,5 +16,10 @@
     "bugs": {
         "url": "https://github.com/maximo-torterolo-ambrosini/avalith-second-practice/issues"
     },
-    "homepage": "https://github.com/maximo-torterolo-ambrosini/avalith-second-practice#readme"
+    "homepage": "https://github.com/maximo-torterolo-ambrosini/avalith-second-practice#readme",
+    "dependencies": {
+        "pg": "^8.8.0",
+        "pg-hstore": "^2.3.4",
+        "sequelize": "^6.23.0"
+    }
 }
