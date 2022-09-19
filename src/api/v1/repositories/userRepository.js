@@ -25,7 +25,15 @@ const createOne = async (username, password, role, createdAt) => {
     return user
 }
 
+const deleteOneById = async (id) => {
+    const user = await User.destroy({ where: { id } })
+    return user
+}
+
 module.exports = {
     findOneByUsername,
-    createOne
+    createOne,
+    findAll,
+    findOneById,
+    deleteOneById
 }
