@@ -1,0 +1,19 @@
+{
+    "name": "second-practice",
+    "version": "1.0.0",
+    "description": "avalith second practice",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/maximo-torterolo-ambrosini/avalith-second-practice.git"
+    },
+    "author": "Maximo Torterolo Ambrosini",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/maximo-torterolo-ambrosini/avalith-second-practice/issues"
+    },
+    "homepage": "https://github.com/maximo-torterolo-ambrosini/avalith-second-practice#readme"
+}
