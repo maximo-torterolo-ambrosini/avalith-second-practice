@@ -30,5 +30,6 @@ const signUp = async (username, password) => {
 
 module.exports = {
     login,
-    signUp
+    signUp,
+    hashPassword
 }

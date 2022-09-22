@@ -61,16 +61,17 @@ const deleteOneById = async (id) => {
     return user
 }
 
-const updateOneById = async (id, { user }) => {
-    const user = await User.update(
+const updateOneById = async (id, user) => {
+    const { username, password, role } = user
+    const userUpdated = await User.update(
         {
-            username: user.username,
-            password: user.password,
-            role: user.role
+            username,
+            password,
+            role
         },
         { where: { id } }
     )
-    return user
+    return userUpdated
 }
 
 module.exports = {
@@ -81,5 +82,7 @@ module.exports = {
     deleteOneById,
     findPasswordByUsername,
     findOneByUsernameIncludePassword,
-    existsByUsername
+    existsByUsername,
+    existById,
+    updateOneById
 }
