@@ -71,11 +71,19 @@ const verifyId = async (req, res, next) => {
     if (!id) {
         res.status(400).json({ error: 'Bad request, id is required', status: 400, ok: false })
     } else {
-        const exists = await userRepository.existById(id)
-        if (!exists) {
-            return res.status(404).json({ error: 'Id Not found', status: 404, ok: false })
+        if (isNaN(parseInt(id))) {
+            res.status(400).json({
+                error: 'Bad request, id must be a number',
+                status: 400,
+                ok: false
+            })
+        } else {
+            const exists = await userRepository.existById(id)
+            if (!exists) {
+                return res.status(404).json({ error: 'Id Not found', status: 404, ok: false })
+            }
+            next()
         }
-        next()
     }
 }
 module.exports = {
