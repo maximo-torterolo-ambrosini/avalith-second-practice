@@ -1,0 +1,9 @@
+# ¿Qué diferencias hay entre bases de datos no relacionales y relacionales?
+En resumen las bases de datos relacionales permiten consultar informacion de una forma mas flexible y almacenarla siguiendo un modelo mientras que las bases de datos no relacionales nos permiten almacenar informacion de forma flexible sin seguir un modelo a costa de perder o dificultar la relacion entre distintas tablas y tener un querying menos eficiente en algunos casos al no utilizar SQL.
+
+# ¿Qué diferencias hay entre JWT y cookies, qué ventajas da cada uno?
+Una cookie es información que nos envia un sitio web y nuestro navegador almacena de forma que mas tarde este mismo sitio pueda consumir para lo que necesite.
+JWT es un token utilizado principalmente para validar informacion entre servicios, aplicaciones o sitios web de forma segura. Puesto que un servidor a la hora de recibir un jwt solo tiene que asegurarse de que la firma sea identica a la que tiene y en caso de que sí permitirle al usuario acceder a los recursos que este mismo servidor bloquea, además jwt te permite mandar informacion a traves de una parte de su cuerpo donde uno puede almacenar los permisos de un usuario y asi limitar sus acciones.
+
+# ¿Para qué sirve el protocolo OAuth?
+OAuth es un estandar abierto utilizado popularmente para la autorizacion en APIs que permite compartir informacion entre sitios/servidores sin tener que compartir informacion sensible o una identidad lo que le facilita al usuario consumir multiples plataformas sin tener que iniciar sesion multiples veces. Basicamente OAuth le facilita la vida al usuario al no tener que llenar multiples veces un registro y al dev al no tener que crear este sistema sino mas bien implementar OAuth.
